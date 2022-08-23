@@ -1,6 +1,6 @@
 "use strict";
 
-const listOfPOsts = [
+const listOfPosts = [
 	{
 		userId: 1,
 		id: 1,
@@ -197,18 +197,18 @@ const listOfPOsts = [
 	},
 ];
 
-listOfPOsts.forEach((listI, val) => {
-	console.log(listI, val);
-	const mainDiv = document.querySelector("#main-div");
-	const e = document.createElement("div");
-	const pTitle = document.createElement("p");
-	const pBody = document.createElement("p");
-	mainDiv.appendChild(e);
-	e.classList.add("divElement");
-	e.appendChild(pTitle);
-	e.appendChild(pBody);
-	pTitle.textContent = `${listI.title}`;
-	pBody.textContent = `${listI.body}`;
-	pTitle.style.color = "orangered";
-	pBody.style.color = "purple";
+const mainDiv = document.querySelector("#main-div");
+listOfPosts.forEach((post, val) => {
+	const childDiv = document.createElement("div");
+	const paragraphTitle = document.createElement("p");
+	const paragraphBody = document.createElement("p");
+	mainDiv.appendChild(childDiv);
+	childDiv.classList.add("divElement");
+	childDiv.appendChild(paragraphTitle);
+	childDiv.appendChild(paragraphBody);
+	paragraphTitle.textContent = post.title;
+	paragraphBody.textContent = post.body;
+	paragraphTitle.style.color = "orangered";
+	paragraphBody.style.color = "purple";
+	console.log(post, val);
 });
